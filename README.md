@@ -7,13 +7,13 @@
 # 🌍 Project Overview
 This project presents a **machine learning–based disaster prediction system** for identifying the likelihood of floods and earthquakes using environmental and seismic parameters. The goal is to provide an early warning and analysis tool that can assist in disaster preparedness and response planning.
 
-The system includes two separate modules:
+**The system includes two separate modules**:
 - *Flood Prediction Module*  
 - *Earthquake Prediction Module*
   
 Both modules use historical data, preprocess it, and train machine learning models to predict the occurrence or severity of a natural disaster.
 
-Model:
+✅ Model:
 - Trained using classification algorithms - **Random Forest**
 
 👨🏻‍💻 Technologies Used:
