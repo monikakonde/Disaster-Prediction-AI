@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AI Disaster Prediction</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(#355C7D, #6C5B7B);
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 450px;
+      margin: 50px auto;
+      padding: 30px;
+      background-color: #1a2533;
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.3);
+    }
+
+    h3 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #00e676;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    label {
+      font-size: 20px;
+      color: #ccc;
+    }
+
+    input[type="number"] {
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      background: #2a3648;
+      color: #fff;
+      font-size: 20px;
+    }
+
+    .form-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+      gap: 10px;
+    }
+
+    input[type="submit"], button {
+      flex: 1;
+      padding: 12px;
+      border-radius: 10px;
+      border: none;
+      font-weight: bold;
+      font-size: 14px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      background: linear-gradient(135deg, #355C7D, #6C5B7B);
+      color: #fff;
+    }
+
+    input[type="submit"]:hover,
+    button:hover {
+      background: linear-gradient(135deg, #6C5B7B, #355C7D);
+    }
+
+    .result {
+      background: #2a3648;
+      padding: 15px;
+      margin-top: 20px;
+      border-radius: 10px;
+      font-size: 16px;
+      text-align: center;
+      color: #00e676;
+      font-weight: bold;
+    }
+
+    hr {
+      border: 0;
+      height: 1px;
+      background: #3a4a5a;
+      margin: 40px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>🌊 Flood Prediction</h2>
+    <form id="floodForm" action="/predict_flood" method="post">
+      <label for="rainfall">Rainfall (mm):</label>
+      <input type="number" name="rainfall" step="0.01" required value="{{ request.form.get('rainfall', '') }}">
+
+      <label for="river_level">River Level (m):</label>
+      <input type="number" name="river_level" step="0.01" required value="{{ request.form.get('river_level', '') }}">
+
+      <label for="humidity">Humidity (%):</label>
+      <input type="number" name="humidity" step="0.01" required value="{{ request.form.get('humidity', '') }}">
+
+      <label for="temperature">Temperature (°C):</label>
+      <input type="number" name="temperature" step="0.01" required value="{{ request.form.get('temperature', '') }}">
+
+      <div class="form-buttons">
+        <input type="submit" value="Predict Flood">
+        <button type="button" onclick="window.location.href='/'">Clear</button>
+      </div>
+    </form>
+
+    {% if flood_result %}
+    <div class="result">
+      {{ flood_result }}
+    </div>
+    {% endif %}
+
+    <hr>
+
+    <h2>🌍 Earthquake Prediction</h2>
+    <form id="earthquakeForm" action="/predict_earthquake" method="post">
+      <label for="magnitude">Magnitude (Richter):</label>
+      <input type="number" name="magnitude" step="0.01" required value="{{ request.form.get('magnitude', '') }}">
+
+      <label for="depth">Depth (km):</label>
+      <input type="number" name="depth" step="0.01" required value="{{ request.form.get('depth', '') }}">
+
+      <label for="ground_acceleration">Ground Acceleration:</label>
+      <input type="number" name="ground_acceleration" step="0.01" required value="{{ request.form.get('ground_acceleration', '') }}">
+
+      <div class="form-buttons">
+        <input type="submit" value="Predict Earthquake">
+        <button type="button" onclick="window.location.href='/'">Clear</button>
+      </div>
+    </form>
+
+    {% if earthquake_result %}
+    <div class="result">
+      {{ earthquake_result }}
+    </div>
+    {% endif %}
+  </div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtual environment
+venv/
+.env/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Environment variable files
+.env
+
+# VSCode settings
+.vscode/
+
+# Model weights or large files
+*.h5
+*.pkl
+*.pt
+*.model
+
+# Log files
+*.log
+
+# Uploaded or generated images
+/static/uploads/
+*.png
+*.jpg
+*.jpeg
+*.gif
+
+# OS generated files
+.DS_Store
+Thumbs.db
