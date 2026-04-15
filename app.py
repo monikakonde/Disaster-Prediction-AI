@@ -1,8 +1,11 @@
 from flask import Flask, request, render_template
 from predict import predict_flood, predict_earthquake
 
-app = Flask(__name__)
+#Flask → to create a web server so users can interact with my ML model through a browser
+#request → to take input data from the user (like rainfall, temperature, seismic data, etc.)
+#render_template → to display results (like flood risk or earthquake prediction) on a web page
 
+app = Flask(__name__)
 
 @app.route('/')
 def home():
