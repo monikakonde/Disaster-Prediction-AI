@@ -1,6 +1,6 @@
-import joblib
+import joblib  #load my trained machine learning models / Random Forest, Decision Trees
 import numpy as np
-import os
+import os 
 
 # Load models from models/ directory
 flood_model = joblib.load(os.path.join("flood_model.pkl"))
