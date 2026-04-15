@@ -1,5 +1,5 @@
-from sklearn.ensemble import RandomForestClassifier
-import pandas as pd
+from sklearn.ensemble import RandomForestClassifier  #used Random Forest Classifier
+import pandas as pd  #Load dataset (CSV files)/Clean data ,Handle missing values
 import joblib
 import os
 
